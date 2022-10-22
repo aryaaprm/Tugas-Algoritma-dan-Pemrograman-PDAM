@@ -1,4 +1,7 @@
- #include <stdio.h>
+//I Made Arya Adi Pramana    	(2205551016)
+//I Kadek Nanda Surya Agusta	(2205551022)
+
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -6,12 +9,12 @@ float admin = 2500;
 float denda = 10000;
 float BPM = 5000;
 
-void D11(){
+void D11(){ //golongan pelanggan
 	int tanggal_pembayaran, rekening;
 	char nama[15];
 	float pemakaian_bulan_lalu, pemakaian_bulan_ini, bayar;
 	float total_pemakaian = pemakaian_bulan_ini - pemakaian_bulan_lalu;
-	printf("===========================================================\n");
+	printf("===========================================================\n"); //tampilan input
 	printf("               RUMAH TANGGA A1 GOLONGAN D1-1 \n");
 	printf("===========================================================\n");
 	printf("Tanggal Pembayaran              :"); scanf("%d", &tanggal_pembayaran);
@@ -21,11 +24,11 @@ void D11(){
 	printf("Penggunaan Air Bulan Ini  (m3)  :"); scanf("%f", &pemakaian_bulan_ini);
 	printf("===========================================================\n");
 	system("cls");
-	if (tanggal_pembayaran>=1 && tanggal_pembayaran<=20){
+	if (tanggal_pembayaran>=1 && tanggal_pembayaran<=20){ //jika membayar sebelum batas yang ditetapkan
 		if (total_pemakaian>=0 && total_pemakaian<=10){
 			float total_pemakaian = pemakaian_bulan_ini - pemakaian_bulan_lalu;
-			bayar = (1780*total_pemakaian) + BPM + admin;
-			printf("===========================================================\n");
+			bayar = (1780*total_pemakaian) + BPM + admin; //tidak dikenakan denda
+			printf("===========================================================\n"); //tampilan output
 			printf("               BUKTI PEMBAYARAN TAGIHAN AIR \n");
 			printf("===========================================================\n");
 			printf("Tanggal Pembayaran         : %d\n", tanggal_pembayaran); 
@@ -79,10 +82,10 @@ void D11(){
 			D11();
 		}
 	}
-	else if (tanggal_pembayaran>=21 && tanggal_pembayaran<=31 ){
+	else if (tanggal_pembayaran>=21 && tanggal_pembayaran<=31 ){ //jika membayar melewati batas yang ditentukan
 		if (total_pemakaian>=0 && total_pemakaian<=10){
 			float total_pemakaian = pemakaian_bulan_ini - pemakaian_bulan_lalu;
-			bayar = (1780*total_pemakaian) + BPM + admin + denda;
+			bayar = (1780*total_pemakaian) + BPM + admin + denda; //dikenakan denda
 			printf("===========================================================\n");
 			printf("               BUKTI PEMBAYARAN TAGIHAN AIR \n");
 			printf("===========================================================\n");
@@ -137,7 +140,7 @@ void D11(){
 		else{
 			printf("===========================================================\n");
 			printf("Silakan masukan data yang sesuai!\n");
-			D11();
+			D11(); //pemanggilan prosedur D11 kembali apabila pengguna salah memasukan data
 		}
 	}
 	else{
@@ -4521,7 +4524,7 @@ void E34(){
 	}
 }
 
-void A1_bersubsidi(){
+void A1_bersubsidi(){ //menu pilihan golongan pelanggan
 	int pilihan;
 	printf("===========================================================\n");
 	printf("                     GOLONGAN PELANGGAN\n");
@@ -4842,7 +4845,7 @@ void niaga_besar(){
 	
 }
 
-void menu_non_niaga_bersubsidi(){
+void menu_non_niaga_bersubsidi(){ //menu pilihan sub kelompok pelanggan
 	int pilihan;
 	printf("===========================================================\n");
 	printf("                    NON NIAGA BERSUBSIDI \n");
@@ -4938,7 +4941,7 @@ void menu_niaga(){
 	}
 }
 
-void menu_utama(){
+void menu_utama(){ //menu pilihan kelompok pelanggan
 	int pilihan;
 	printf("===========================================================\n");
 	printf("                     KELOMPOK PELANGGAN\n");
@@ -4986,8 +4989,8 @@ void instruksi(){
 
 int main(){
 
-	instruksi();
-	menu_utama();
+	instruksi(); //pemanggilan prosedur intruksi
+	menu_utama(); //pemanggilan prosedur menu utama
 
 	return 0;
 }
